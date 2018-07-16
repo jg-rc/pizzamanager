@@ -9,19 +9,21 @@ import Terms from './pages/terms'
 
 
 
-const HeaderExampleImageProp = () => (
-  <Header as='h2' image='https://img.clipartxtras.com/df853d441960da671cbe5a4168229982_whole-pepperoni-pizza-clipart-38-pepperoni-clipart-black-and-white_1203-1159.gif' content='Pizza admin' />
+const HeaderLogo = () => (
+ <Header as='h2' image='https://img.clipartxtras.com/df853d441960da671cbe5a4168229982_whole-pepperoni-pizza-clipart-38-pepperoni-clipart-black-and-white_1203-1159.gif' content='Pizza admin' />
 )
-/**
- * App class react router in change of routes for all pages.
- *
- *
- */
+    /**
+     * App class react router in change of routes for all pages.
+     *
+     *
+     */
 class App extends Component {
   render() {
     return (
       <Container>
-        <HeaderExampleImageProp />
+         <NavLink  activeClassName="selected" to="/orders/list">
+          <HeaderLogo />
+         </NavLink>
         <div className="ui  three item menu">
           <NavLink className="item" activeClassName="active" exact to="/">
             Inicio
