@@ -6,3 +6,39 @@ body {
 .error {
   color: #9f3a38;
 }
+.home-image{
+  width: 100%;
+  max-width: 550px;
+  margin:10px 0;
+  display: block;
+  border: solid 1px black;
+}
+.title-instruction{
+  font-weight: bold;
+  margin: 15px 0 7px;
+  font-size: 18px;
+}
+.instruction{
+  font-size: 12px;
+}
+.footer{
+  font-size: 12px;
+  margin: 15px 0;
+}
+.copyright{
+  font-size: 8px;
+}
+.divider{
+  border-left: 1px solid rgba(34,36,38,.15);
+  border-right: 1px solid rgba(255,255,255,.1);
+  margin: 0 5px;
+}
+.footer-links{
+  display: flex;
+}
+.footer-links a{
+  color:black;
+}
+#root{
+  padding: 15px;
+}

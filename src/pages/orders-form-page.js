@@ -6,6 +6,12 @@ import { newOrder, saveOrder, fetchOrder, updateOrder } from '../actions/orders-
 import OrdersForm from '../components/orders-form';
 
 
+/**
+ * 
+ * form page in charge of show the create and update form
+ *
+ *
+ */
 class OrdersFormPage extends Component {
 
   state = {
@@ -42,7 +48,7 @@ class OrdersFormPage extends Component {
       <div>
         {
           this.state.redirect ?
-          <Redirect to="/" /> :
+          <Redirect to="/orders/list" /> :
           <OrdersForm order={this.props.order} loading={this.props.loading} onSubmit={this.submit} />
         }
       </div>

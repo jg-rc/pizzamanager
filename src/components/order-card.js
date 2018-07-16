@@ -2,6 +2,12 @@ import React from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
+/**
+ * 
+ * card class component in charge of show a single order
+ *
+ *
+ */
 export default function OrderCard({order, deleteOrders}) {
   return (
     <Card>

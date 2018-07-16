@@ -4,6 +4,14 @@ import OrdersList from '../components/orders-list';
 import { fetchOrders, deleteOrders } from '../actions/orders-actions';
 import { Pagination } from 'semantic-ui-react'
 
+
+
+/**
+ * 
+ * list class component in charge of show orders list
+ *
+ *
+ */
 class OrdersListPage extends Component {
     state = {
         activePage: 1,

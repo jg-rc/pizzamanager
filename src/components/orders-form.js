@@ -45,6 +45,10 @@ const validate = (values) => {
     return errors;
   }
 
+  /**
+ * 
+ * form class component in charge of show a form and validation
+ */
 class OrdersForm extends Component {
 
   renderField = ({ input, label, type, meta: { touched, error } }) => (
