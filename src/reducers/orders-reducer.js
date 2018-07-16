@@ -1,19 +1,21 @@
 const defaultState = {
     orders: [],
     order: {},
+    total:0,
     loading: false,
     errors: {}
   }
   
   export default (state=defaultState, action={}) => {
     switch (action.type) {
-        case 'FETCH_ORDERS': {
+      case 'FETCH_ORDERS': {
             return {
-            ...state,
-            orders: action.payload.data.data || action.payload.data // in case pagination is disabled
+              ...state,
+              total: action.payload.data.total, // needed for pagination
+              orders: action.payload.data.data || action.payload.data // in case pagination is disabled
             }
         }
-        case 'NEW_CONTACT': {
+        case 'NEW_ORDER': {
             return {
                 ...state,
                 order: {}
@@ -33,15 +35,44 @@ const defaultState = {
               loading: false
             }
         }
-        case 'SAVE_ORDER_REJECTED': {
-            const data = action.payload.response.data;
-            // convert feathers error formatting to match client-side error formatting
-            const { nombre , direccion, pizza, telefono, sabor } = data.errors;
-            const errors = { global: data.message, nombre, direccion, pizza, telefono,sabor };
+        case 'FETCH_ORDER_PENDING': {
             return {
               ...state,
-              errors: errors,
+              loading: true,
+              order: {}
+            }
+          }
+          
+          case 'FETCH_ORDER_FULFILLED': {
+            return {
+              ...state,
+              order: action.payload.data,
+              errors: {},
               loading: false
+            }
+          }
+          
+          case 'UPDATE_ORDER_PENDING': {
+            return {
+              ...state,
+              loading: true
+            }
+          }
+          
+          case 'UPDATE_ORDER_FULFILLED': {
+            const order = action.payload.data;
+            return {
+              ...state,
+              orders: state.orders.map(item => item._id === order._id ? order : item),
+              errors: {},
+              loading: false
+            }
+          }
+          case 'DELETE_ORDER_FULFILLED': {
+            const _id = action.payload.data._id;
+            return {
+              ...state,
+              orders: state.orders.filter(item => item._id !== _id)
             }
           }
       default:

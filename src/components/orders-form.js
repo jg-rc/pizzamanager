@@ -19,13 +19,27 @@ const validate = (values) => {
         message: 'el numero debe estar en formato internacional'
       }
     }
-    if(!values.email) {
-      errors.email = {
-        message: 'You need to provide an Email address'
+    if(!values.direccion) {
+      errors.direccion = {
+        message: 'La pizza tiene que llegar a algun lugar... agrega una direccion'
       }
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = {
-        message: 'Invalid email address'
+    }
+    if(!values.sabor) {
+      errors.sabor = {
+        message: 'una pizza sin sabor 🤔 ... sabor es requerido'
+      }
+    }else if(!/^[a-zA-Z]+$/.test(values.sabor)) {
+      errors.sabor = {
+        message: 'ten cuidado ese sabor no es admitido, solo caracteres'
+      }
+    }
+    if(!values.pizza) {
+      errors.pizza = {
+        message: 'que tamaño la quieres ? '
+      }
+    }else if(!/^[a-zA-Z]+$/.test(values.pizza)) {
+      errors.pizza = {
+        message: 'ten cuidado ese tamaño no es admitido, solo caracteres'
       }
     }
     return errors;
@@ -49,18 +63,24 @@ class OrdersForm extends Component {
         <Grid.Column>
           <h1 style={{marginTop:"1em"}}>Agrega una nueva orden</h1>
             <Form onSubmit={handleSubmit} loading={loading}>
-                <Field name="nombre" type="text" component={this.renderField} label="Nombre"/>
-                <Field name="telefono" type="text" component={this.renderField} label="Telefono" />
+                <Field name="nombre" type="text" component={this.renderField} label="Nombre del cliente"/>
+                <Field name="telefono" type="text" component={this.renderField} label="Telefono del cliente" />
                 <Field name="direccion" type="text" component={this.renderField} label="Direccion" />        
             <Form.Group widths='equal'>
-              <Field name="sabor" type="text" component={this.renderField} label="Sabor"/>
-              <Field name="pizza" type="text" component={this.renderField} label="Pizza"/>
+              <Field name="sabor" type="text" component={this.renderField} label="Sabor de la pizza"/>
+              <Field name="pizza" type="text" component={this.renderField} label="Tamaño de la Pizza"/>
             </Form.Group>
             <Button primary type='submit' disabled={pristine || submitting}>Guardar</Button>
           </Form>
         </Grid.Column>
       </Grid>
     )
+  }
+  componentWillReceiveProps = (nextProps) => { // Receive order data Asynchronously
+    const { order } = nextProps;
+    if(order._id !== this.props.order._id) { // Initialize form only once
+      this.props.initialize(order)
+    }
   }
 }
 

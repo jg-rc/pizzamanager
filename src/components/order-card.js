@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
-export default function OrderCard({order, deleteOrder}) {
+export default function OrderCard({order, deleteOrders}) {
   return (
     <Card>
       <Card.Content>
@@ -9,17 +10,19 @@ export default function OrderCard({order, deleteOrder}) {
           <Icon name='user outline'/> {order.nombre}
         </Card.Header>
         <Card.Description>
-          <p><Icon name='phone'/> {order.telefono}</p>
-          <p><Icon name='mail outline' /> {order.sabor}</p>
-          <p><Icon name='mail outline' /> {order.direccion}</p>
-          <p><Icon name='mail outline' /> {order.pizza}</p>
+          <p><Icon name='phone' /> {order.telefono}</p>
+          <p><Icon name='map pin' /> {order.direccion}</p>
+          <p><Icon name='food' /> {order.sabor}</p> 
+          <p><Icon name='adjust' /> {order.pizza}</p>
                 
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className="ui two buttons">
-          <Button basic color="green">Edit</Button>
-          <Button basic color="red">Delete</Button>
+        <div className="ui two buttons">
+            <Link to={`/orders/edit/${order._id}`} className="ui basic button green">Editar</Link>
+            <Button basic color="red" onClick={() => deleteOrders(order._id)} >Borrar</Button>
+        </div>
         </div>
       </Card.Content>
     </Card>
