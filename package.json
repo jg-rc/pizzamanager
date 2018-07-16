@@ -2,6 +2,10 @@
   "name": "managepizza",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
@@ -16,12 +20,36 @@
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.3.3",
-    "semantic-ui-react": "^0.82.0"
+    "semantic-ui-react": "^0.82.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "feathers": "^2.2.4",
+    "feathers-configuration": "^0.4.2",
+    "feathers-errors": "^2.9.2",
+    "feathers-hooks": "^2.1.2",
+    "feathers-hooks-common": "^4.14.3",
+    "feathers-nedb": "^3.1.0",
+    "feathers-rest": "^1.8.1",
+    "helmet": "^3.12.1",
+    "nedb": "^1.8.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run server-start & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server-test": "npm run eslint && npm run mocha",
+    "server-eslint": "eslint server/src/. server/test/. --config .eslintrc.json",
+    "server-start": "node server/src/",
+    "server-mocha": "mocha server/test/ --recursive --exit"
   }
 }
