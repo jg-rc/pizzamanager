@@ -14,17 +14,17 @@ El cliente fue generado usando la herramienta `create-react-app` la cual nos cre
 
 En el codigo de servidor se usaron las sigientes tecnologias y paquetes
 
--[Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications and rest services.
--[Express](http://expressjs.com/). Fast, unopinionated, minimalist web framework for Node.js .
--[nedb](https://github.com/louischatriot/nedb). The JavaScript Database, for Node.js, nw.js, electron and the browser
--[winston](https://www.npmjs.com/package/winston). A logger for just about everything.
+- [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications and rest services.
+- [Express](http://expressjs.com/). Fast, unopinionated, minimalist web framework for Node.js .
+- [nedb](https://github.com/louischatriot/nedb). The JavaScript Database, for Node.js, nw.js, electron and the browser
+- [winston](https://www.npmjs.com/package/winston). A logger for just about everything.
 
 En el cliente se utilizaron las siguientes tecnologias
--[create react app](https://github.com/facebook/create-react-app). Create React apps with no build configuration.
--[ReactJS](https://reactjs.org/). A JavaScript library for building user interfaces
--[Redux](https://redux.js.org/). Redux is a predictable state container for JavaScript apps.
--[React semantic ui ](https://react.semantic-ui.com).User Interface is the language of the web
--[React Router](https://github.com/ReactTraining/react-router). Declarative routing for React 
+- [create react app](https://github.com/facebook/create-react-app). Create React apps with no build configuration.
+- [ReactJS](https://reactjs.org/). A JavaScript library for building user interfaces
+- [Redux](https://redux.js.org/). Redux is a predictable state container for JavaScript apps.
+- [React semantic ui ](https://react.semantic-ui.com).User Interface is the language of the web
+- [React Router](https://github.com/ReactTraining/react-router). Declarative routing for React 
 
 ## estructura
 
