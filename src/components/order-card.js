@@ -10,7 +10,10 @@ export default function OrderCard({order, deleteOrder}) {
         </Card.Header>
         <Card.Description>
           <p><Icon name='phone'/> {order.telefono}</p>
-          <p><Icon name='mail outline'/> {order.sabor}</p>
+          <p><Icon name='mail outline' /> {order.sabor}</p>
+          <p><Icon name='mail outline' /> {order.direccion}</p>
+          <p><Icon name='mail outline' /> {order.pizza}</p>
+                
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
