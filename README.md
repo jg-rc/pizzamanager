@@ -95,11 +95,17 @@ Conseguirlo es asi de facil como seguir los pasos 1, 2, 3.
     cd pizzamanager; npm install
     ```
 
-3. Inicia tu aplicacion, la aplicacion iniciara el servidor y el cliente simultaneamente, el cliente iniciara la ejecucion en la siguiente direccion [http://localhost:3000](http://localhost:3000)
+3. Inicia el servidor crud usando el comando 
+  ```
+  npm run server-start
+  ```
+
+4. En una terminal independiente Inicia tu aplicacion, la aplicacion iniciara el servidor y el cliente simultaneamente, el cliente iniciara la ejecucion en la siguiente direccion [http://localhost:3000](http://localhost:3000)
 
     ```
     npm start
     ```
+
 ## otros comandos 
 
 ### `npm run build`
